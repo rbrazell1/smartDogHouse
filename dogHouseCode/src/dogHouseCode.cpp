@@ -3,7 +3,7 @@
 /******************************************************/
 
 #include "Particle.h"
-#line 1 "c:/Users/Russell/Desktop/Personal-IoT-Projects/dogHouse/dogHouseCode/src/dogHouseCode.ino"
+#line 1 "c:/Users/russe/Desktop/personal-projects/projects/smartDogHouse/dogHouseCode/src/dogHouseCode.ino"
 /*
  * Project dogHouseCode
  * Description:
@@ -26,7 +26,7 @@ void heatTraceControl(float currentHeat);
 void ACControl(float currentHeat);
 void publishReadings();
 void MQTT_connect();
-#line 16 "c:/Users/Russell/Desktop/Personal-IoT-Projects/dogHouse/dogHouseCode/src/dogHouseCode.ino"
+#line 16 "c:/Users/russe/Desktop/personal-projects/projects/smartDogHouse/dogHouseCode/src/dogHouseCode.ino"
 const int NP_HEALTH_INDECATOR_PIN = A0;
 const int AC_RELAY_PIN = D8;
 const int HEAT_TRACE_RELAY_PIN = D7;
@@ -155,7 +155,7 @@ if (currentHeat < 65.0)
     radiantHeaterOn = true;
     fanHeaterRunning = true;
     // These are backwards because the relay is wired to fail closed
-    digitalWrite(FAN_HEATER_RELAY_PIN, 1);
+    digitalWrite(FAN_HEATER_RELAY_PIN, 0);
     digitalWrite(RADIANT_HEATER_RELAY_PIN, 1);
     NPIndecator.setPixelColor(2, 0x0AE400);
     NPIndecator.setPixelColor(3, 0x0AE400);
@@ -165,7 +165,7 @@ if (currentHeat < 65.0)
     // Heater off
     radiantHeaterOn = false;
     fanHeaterRunning = false;
-    digitalWrite(FAN_HEATER_RELAY_PIN, 0);
+    digitalWrite(FAN_HEATER_RELAY_PIN, 1);
     digitalWrite(RADIANT_HEATER_RELAY_PIN, 0);
     NPIndecator.setPixelColor(2, 0xFF0000);
     NPIndecator.setPixelColor(3, 0xFF0000);
