@@ -161,7 +161,7 @@ void heaterControl(float currentHeat)
 
 void heatTraceControl(float currentHeat)
 {
-    if (currentHeat < 37.0)
+    if (currentHeat < 33.0)
     {
         // Heat trace on
         heatTraceOn = true;
@@ -169,7 +169,7 @@ void heatTraceControl(float currentHeat)
         NPIndecator.setPixelColor(1, 0x0AE400);
         NPIndecator.show();
     }
-    else if (currentHeat > 40.0)
+    else if (currentHeat > 35.0)
     {
         // Heat trace off
         heatTraceOn = false;
