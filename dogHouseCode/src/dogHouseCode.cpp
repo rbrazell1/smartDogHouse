@@ -3,7 +3,7 @@
 /******************************************************/
 
 #include "Particle.h"
-#line 1 "c:/Users/russe/Desktop/personal-projects/projects/smartDogHouse/dogHouseCode/src/dogHouseCode.ino"
+#line 1 "c:/Users/Russell/Desktop/Personal-IoT-Projects/dogHouse/smartDogHouse/dogHouseCode/src/dogHouseCode.ino"
 /*
  * Project dogHouseCode
  * Description:
@@ -26,7 +26,7 @@ void heatTraceControl(float currentHeat);
 void ACControl(float currentHeat);
 void publishReadings();
 void MQTT_connect();
-#line 16 "c:/Users/russe/Desktop/personal-projects/projects/smartDogHouse/dogHouseCode/src/dogHouseCode.ino"
+#line 16 "c:/Users/Russell/Desktop/Personal-IoT-Projects/dogHouse/smartDogHouse/dogHouseCode/src/dogHouseCode.ino"
 const int NP_HEALTH_INDECATOR_PIN = A0;
 const int AC_RELAY_PIN = D8;
 const int HEAT_TRACE_RELAY_PIN = D7;
@@ -175,7 +175,7 @@ void heaterControl(float currentHeat)
 
 void heatTraceControl(float currentHeat)
 {
-    if (currentHeat < 33.0)
+    if (currentHeat < 32.0)
     {
         // Heat trace on
         heatTraceOn = true;
@@ -183,7 +183,7 @@ void heatTraceControl(float currentHeat)
         NPIndecator.setPixelColor(1, 0x0AE400);
         NPIndecator.show();
     }
-    else if (currentHeat > 35.0)
+    else if (currentHeat > 33.0)
     {
         // Heat trace off
         heatTraceOn = false;
